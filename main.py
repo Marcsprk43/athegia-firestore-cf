@@ -74,6 +74,7 @@ def save_data(request):
 
     res = save_fs_document(fs_collection, fs_path.format(patient_uuid, document_name), payload)
 
+    # res is either True or it contains the firestore error - convert True to 'Successfully Saved'
     if (type(res) == bool) and (res==True):
         res = 'Successfully Saved'
       
