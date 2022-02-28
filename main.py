@@ -74,5 +74,7 @@ def save_data(request):
 
     res = save_fs_document(fs_collection, fs_path.format(patient_uuid, document_name), payload)
 
+    if (type(res) == bool) and (res==True):
+        res = 'Successfully Saved'
       
     return (res, 200, headers)
